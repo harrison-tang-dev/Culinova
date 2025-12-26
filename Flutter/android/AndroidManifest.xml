@@ -1,0 +1,72 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.safeplates.safeplates">  <!-- Replace with your correct package name -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <application
+        android:label="safeplate"
+        android:icon="@mipmap/ic_launcher">
+
+        <!-- Pushy Broadcast Receiver -->
+        <receiver
+            android:name="me.pushy.sdk.receivers.PushyBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="me.pushy.sdk.action.PUSH_RECEIVE" />
+                <action android:name="pushy.me"/>
+            </intent-filter>
+        </receiver>
+
+
+        <!-- Pushy Job Service -->
+        <service
+            android:name="me.pushy.sdk.services.PushyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"/>
+
+        <!-- Flutter embedding v2 -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:usesCleartextTraffic="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+                android:resource="@drawable/splash"
+                />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="mailto" />
+        </intent>
+    </queries>
+    <!-- Intent query to process text -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+
+    <!-- Required Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BIND_JOB_SERVICE" />
+</manifest>

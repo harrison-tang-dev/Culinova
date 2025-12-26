@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "383074742500",
+    "project_id": "safeplate-b586b",
+    "storage_bucket": "safeplate-b586b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383074742500:android:ea69c5ff32ef6a3ce2bcf1",
+        "android_client_info": {
+          "package_name": "com.safeplates.safeplates"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMr8pfiisGVAOyh7AS1vQEYEVPxs3v0o4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

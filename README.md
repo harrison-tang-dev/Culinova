@@ -10,3 +10,51 @@ The system is concealed in a rigorously designed and portable physical device th
 
 The system is paired in use **with the new application developed, SafePlates**. Its current capabilities include scan-to-detect functionality for ingredients and health risks in food and offering an AI assistant in designing a healthy diet for users. The goal is for the application to analyze outputs from the biosensor to interpret the safety level of contaminants quantified and advise users on a personal level.
 
+
+_**Backend and APIs Setup**_
+
+The backend for the APP acts as the central communication layer. It receives processes scan results, calls important APIs, and manages any required storage or analytics.
+
+Prerequisites for the backend include Node.js version 18 or higher and npm or yarn. After cloning the repository, navigate into the backend directory.
+
+```python
+cd "Backend & APIs"
+```
+
+Install dependencies.
+```python
+npm install
+```
+
+or, if using yarn,
+```python
+yarn install
+```
+
+To start the backend server in development mode, run:
+```python
+npm run dev
+```
+
+or for a standard start,
+```python
+npm start
+```
+
+
+The backend will typically be available at:
+```python
+http://localhost:3000
+```
+
+
+If environment variables are required, create a .env file in the Backend and APIs directory.
+```python
+PORT=3000
+DATABASE_URL=your_database_url
+API_KEY=your_api_key
+```
+
+
+
+
